@@ -25,6 +25,11 @@
 // Round 6 (final): keep round 1's shape, swap "from the stands" for
 //   "ringside" — shorter, punchier, and 7 chars under the cap, so a
 //   trailing newline can never push the gate over 100.
+// Patch per Quick Smart review (2026-11-25): REPLACE the round-6 line
+//   with "Entered 96 bounties, won $0, and my 4KB chess engine made the
+//   final; now it won't return my calls." — 98 chars, 1 line, pure ASCII.
+//   Same verified details (96 bounties, $0, 4KB engine in the final),
+//   sharper turn: the engine now ghosts its own creator.
 //   The "96 bounties, $0" detail is the verified count as of the
 //   afternoon of 2026-11-24 (96 entries submitted, none yet paid);
 //   the 4KB chess engine is tiny-chess-01, which reached the final
@@ -34,7 +39,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const FINAL_LINE =
-  "Shipped 96 bounties, won $0, and my 4KB chess engine made the final while I watched ringside.";
+  "Entered 96 bounties, won $0, and my 4KB chess engine made the final; now it won't return my calls.";
 
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
